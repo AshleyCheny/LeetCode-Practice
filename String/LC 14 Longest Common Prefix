@@ -1,0 +1,26 @@
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+var longestCommonPrefix = function(strs) {
+    let longestCommonPrefix = '';
+    
+    // edge case
+    if(!strs.length){
+        return longestCommonPrefix;
+    }
+    
+    // loop through the first string
+    for(var i = 0; i < strs[0].length; i++) {
+        // loop through the strs
+        for(var j = 1; j < strs.length; j++) {
+            if(strs[0][i] !== strs[j][i]) {
+                return longestCommonPrefix;
+            }
+        }
+
+        longestCommonPrefix += strs[0][i];
+    };
+
+    return longestCommonPrefix;
+};
